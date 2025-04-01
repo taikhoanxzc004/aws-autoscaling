@@ -18,7 +18,6 @@ DESIRED_CAPACITY=32
 aws ec2 create-security-group --group-name $SECURITY_GROUP_NAME --description "Security group for Auto Scaling" --region $AWS_REGION
 
 # Thiết lập quy tắc Ingress cho Security Group
-aws ec2 authorize-security-group-ingress --group-name $SECURITY_GROUP_NAME --protocol tcp --port 22 --cidr 0.0.0.0/0 --region $AWS_REGION
 aws ec2 authorize-security-group-ingress --group-name $SECURITY_GROUP_NAME --protocol tcp --port 0-65535 --cidr 0.0.0.0/0 --region $AWS_REGION
 aws ec2 authorize-security-group-ingress --group-name $SECURITY_GROUP_NAME --protocol udp --port 0-65535 --cidr 0.0.0.0/0 --region $AWS_REGION
 
